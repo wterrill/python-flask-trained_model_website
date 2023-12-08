@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contractor Detractor Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+	<audio id="audioPlayer" src="{{ url_for('static', filename='Contractor_Detractor_Extractor.m4a') }}" preload="auto"></audio>
+    <button id="audioControlButton" onclick="toggleAudio()">Play the CDE rap!</button>
+
+    <script>
+		var isPlaying = false; // Variable to track play state
+	
+		function toggleAudio() {
+        var audioPlayer = document.getElementById("audioPlayer");
+        var controlButton = document.getElementById("audioControlButton");
+
+        if (!isPlaying) {
+            audioPlayer.play();
+            controlButton.textContent = 'For the love of all that is holy, stop the rap! stop the rap!'; // Update button text to 'Pause Audio'
+            isPlaying = true;
+        } else {
+            audioPlayer.pause();
+            controlButton.textContent = 'Play the CDE rap!'; // Update button text to 'Play Audio'
+            isPlaying = false;
+        }
+    }
+	</script>
+<br>
+<button onclick="openPopup()">Show Lyrics!</button>
+
+<!-- Pop-Up -->
+<div id="popup" class="popup">
+	<div class="popup-content">
+		<span class="close" onclick="closePopup()">&times;</span>
+		<div>
+			<i>lyrics below by ChatGPT. Any deviations from the below are from Sandra's awesomeness!</i>
+			<p>(Verse 1)<br>
+			Yo, check the scene, it's like a dream, a digital fact,<br>
+			We got a program in the game, no fiction, just an artifact.<br>
+			It's about energy, sustainability's key,<br>
+			Finding contractors reliable, like a lock with a key.<br><br>
+		
+			We crunch numbers, no slumbers, data in full stack,<br>
+			Ain't no room for errors, we keep it right on track.<br>
+			State programs on the rise, we optimize,<br>
+			With a system so wise, truth in disguise.</p>
+		
+			<p>(Chorus)<br>
+			Contractor Detractor Extractor, we're the factor,<br>
+			Sifting through the noise, clarity's what we're after.<br>
+			In the world of energy, we're the main actor,<br>
+			Bringing light to the dark, like a nuclear reactor.</p>
+		
+			<p>(Verse 2)<br>
+			In the code, we embed, no mislead, we proceed,<br>
+			Filtering the best, separating from the greed.<br>
+			This program's got eyes, sees through the lies,<br>
+			Rating contractors, no surprise, they can't disguise.<br><br>
+		
+			Algorithms tight, like a script in the night,<br>
+			Scanning through the data, making everything right.<br>
+			No room for the flawed, only the commendable,<br>
+			In the energy game, only the best is dependable.</p>
+		
+			<p>(Chorus)<br>
+			Contractor Detractor Extractor, we're the factor,<br>
+			In a digital world, we're the main attractor.<br>
+			Sorting the good from bad, like a skilled extractor,<br>
+			In the realm of reliability, we're the main contractor.</p>
+		
+			<p>(Bridge)<br>
+			From the valley to the urban sector,<br>
+			We're the guardians, the protectors.<br>
+			For state energy, we're the inspectors,<br>
+			In this digital world, we're the directors.</p>
+		
+			<p>(Outro)<br>
+			So when you think of energy, in state programs' sphere,<br>
+			Remember the system that makes it all clear.<br>
+			Contractor Detractor Extractor, we're here,<br>
+			Bringing transparency, far and near.<br><br>
+		
+			End the game of chance, we've got the lance,<br>
+			In the world of reliability, we take the stance.<br>
+			With data in hand, we enhance,<br>
+			For a better energy future, we advance.</p>
+		</div>
+		
+		<!-- Add more text/content here as needed -->
+	</div>
+</div>
+
+<script>
+	// JavaScript to handle pop-up
+	function openPopup() {
+		document.getElementById("popup").style.display = "block";
+	}
+
+	function closePopup() {
+		document.getElementById("popup").style.display = "none";
+	}
+
+	    // Event listener for closing the pop-up when clicking outside of it
+		window.onclick = function(event) {
+        var popup = document.getElementById("popup");
+        if (event.target === popup) {
+            closePopup();
+        }
+    }
+</script>
+
+    <h1>Contractor Detractor Extractor</h1>
+
+    <div class="form-container">
+        <form action="prediction" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <div class="form-title">Desired Date:</div>
+                <input type="date" name="InstallationDate" placeholder="Select Date">
+            </div>
+
+            <div class="form-group">
+                <div class="form-title">Energy Efficiency Measure:</div>
+                <select name="MeasureName" placeholder="Measure Name">
+                    {% for name in measure_names %}
+                    <option value="{{ name }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="form-title">Installer Company Number:</div>
+                <select name="Installer" placeholder="Installer">
+                    <option value="Installer 7136">Installer 7136</option>
+                    {% for installer in installers %}
+                    <option value="{{ installer }}">{{ installer }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="form-title">Incentive Amount:</div>
+                <input type="number" name="IncentiveAmount" min="0" max="1000" step="10">
+            </div>
+
+            <div class="form-group">
+                <div class="form-title">Installed Measure Quantity:</div>
+                <input type="number" name="InstalledMeasureQty" min="0" max="500" step="1">
+            </div>
+
+            <input type="submit" name="btn">
+        </form>
+    </div>
+	<h2>Team: Infinite Loops!</h2>
+
+</body>
+</html>

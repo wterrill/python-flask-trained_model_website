@@ -1,0 +1,13 @@
+docker build -t wine . 
+docker tag beer us-central1-docker.pkg.dev/learned-acronym-407219/hello-world-flask1/beer
+docker push us-central1-docker.pkg.dev/learned-acronym-407219/hello-world-flask1/hello-world-flask
+
+../google-cloud-sdk/bin/gcloud config set run/region us-central1  
+../google-cloud-sdk/bin/gcloud run deploy --source .
+../google-cloud-sdk/bin/gcloud init  
+
+docker images 
+
+docker run -p 4000:8080 wine  #localhost:4000
+
+pip3 install --no-cache-dir -r requirements.txt 

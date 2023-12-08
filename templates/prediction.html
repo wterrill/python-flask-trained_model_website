@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prediction</title>
+</head>
+<body>
+
+	<center>
+		<h1>Results</h1>
+ 		<h1> Probability of Failure: {{ (data[0] * 100) | round(1) }}% </h1>
+		{% if data<0.33 %}
+		<h2>Prediction is : GOOD!</h2>
+		<img src="static/thumbs_up{{ random_number }}.jpg">
+		{% elif data<0.66 %}
+		<h2>Prediction is : ...MEH.</h2>
+		<img src="static/meh{{ random_number }}.jpg">
+		{% elif data<1 %}
+		<h2>Prediction is : BAD!</h2>
+		<img src="static/thumbs_down{{ random_number }}.jpg">
+		{% else %}
+		<h2> ERROR</h2>
+		{% endif %}
+
+</body>
+</html>

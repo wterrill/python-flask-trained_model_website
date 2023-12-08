@@ -1,0 +1,17 @@
+# requirements.txt
+# Flask
+#region: us-central1
+#projectID: learned-acronym-407219
+#repository_name: hello-world-flask1
+#service_name: hello-world-flask2
+
+# learned-acronym-407219/hello-world-flask1/beer
+
+Flask==3.0.0
+gunicorn==20.1.0
+Werkzeug==3.0.1
+numpy 
+pandas
+scikit-learn
+joblib
+datetime
